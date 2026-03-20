@@ -18,7 +18,7 @@
             --accent-hover: #059669;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --brand-blue: #0f4c81; /* Biru Branding */
+            --brand-blue: #0f4c81;
             --discord: #5865F2;
         }
 
@@ -57,20 +57,22 @@
 
         .form-box h2 { margin: 0 0 20px 0; font-size: 1.6rem; color: var(--accent); text-align: center; }
         .input-group { margin-bottom: 12px; }
-        label { display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
+        label { display: block; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
         input, select { width: 100%; padding: 10px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: white; font-size: 14px; box-sizing: border-box; }
+
+        .flex-input { display: flex; gap: 8px; }
+        .flex-input select { width: 100px; flex-shrink: 0; }
 
         .upload-area {
             border: 2px dashed #475569; border-radius: 10px; padding: 15px;
             text-align: center; cursor: pointer; background: rgba(0,0,0,0.2); margin-bottom: 15px;
         }
 
-        .btn-group { display: flex; flex-direction: column; gap: 8px; }
+        .btn-group { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
         button { padding: 12px; border-radius: 10px; font-weight: 800; font-size: 12px; cursor: pointer; text-transform: uppercase; transition: 0.2s; border: none; }
         .btn-generate { background: var(--accent); color: white; }
         .btn-discord { background: var(--discord); color: white; }
         .btn-download { background: transparent; border: 1px solid var(--text-muted); color: var(--text-muted); }
-        button:disabled { opacity: 0.5; cursor: not-allowed; }
 
         /* --- CARD PREVIEW --- */
         .card-box { flex: 1; display: flex; justify-content: center; align-items: center; }
@@ -81,72 +83,73 @@
             overflow: hidden;
         }
 
-        /* Pattern & Watermark ditipiskan supaya teks menang */
         .card-pattern {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('FOTO/guilochePattern5.png'); 
-            opacity: 1; /* Ditipiskan agar tidak menabrak teks */
-            pointer-events: none; z-index: 1;
-        }
-        .watermark-logo { 
-            position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); 
-            width: 450px; opacity: 0.1; pointer-events: none; z-index: 2; 
+            background-image: url('FOTO/guilochePattern6.png'); 
+            opacity: 1; pointer-events: none; z-index: 1;
         }
 
-        /* Logo Samping Dibuat Jelas */
-        .corner-logo { position: absolute; top: 25px; width: 75px; height: 75px; object-fit: contain; z-index: 30; opacity: 1; }
-        .logo-left { left: 60px; } 
-        .logo-right { right: 60px; }
-
-        /* HEADER SECTION */
-        .card-header-group { text-align: center; margin-bottom: 30px; border-bottom: 4px solid var(--brand-blue); padding-bottom: 15px; margin-top: -20px;z-index: 30; position: relative; }
-        .card-header { font-size: 46px; font-weight: 800; color: #07355e; margin: 0; opacity: 1; text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.1); }
-        .card-sub { font-size: 22px; letter-spacing: 14px; font-weight: 700; color: #1e293b; opacity: 1; margin-top: 5px; }
-
-        /* CONTENT SECTION */
-        .card-content { display: flex; gap: 50px; z-index: 30; position: relative; }
-        .photo-section { display: flex; flex-direction: column; align-items: center; width: 250px; }
-        .photo-frame { width: 250px; height: 320px; background: #f1f5f9; border-radius: 15px; border: 6px solid #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.15); overflow: hidden; margin-bottom: 15px; }
-        .photo-section { position: relative; } 
-        .photo-seal {
+        /* TEMPEL DI SINI */
+        .logo-boat-center {
             position: absolute;
-            bottom: 35px; 
-            right: -15px; 
-            width: 80px;  
-            opacity: 0.3; 
-            z-index: 35;  
+            top: 57%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            opacity: 0.1;
+            z-index: 2;
             pointer-events: none;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
-        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .corner-logo { position: absolute; top: 20px; object-fit: contain; z-index: 30; }
+        .logo-left { left: 40px; width: 95px; height: 95px; } 
+        .logo-right { right: 40px; width: 100px; height: 100px;}
+        .logo-indopride { position: absolute; top: 170px; right: 50px; width: 80px; z-index: 30; opacity: 0.4;}
 
-        .license-no-container { text-align: center; }
-        .license-no-label { font-size: 11px; font-weight: 800; color: #475569; letter-spacing: 1px; }
-        .license-no-value { font-family: 'Courier New', monospace; font-weight: 900; font-size: 24px; color: #000000; }
+        .card-header-group { text-align: center; margin-bottom: 30px; border-bottom: 4px solid var(--brand-blue); padding-bottom: 15px; margin-top: -10px; z-index: 30; position: relative; }
+        .card-header { font-size: 44px; font-weight: 800; color: #07355e; margin: 0; }
+        .card-sub { font-size: 22px; letter-spacing: 12px; font-weight: 700; color: #1e293b; margin-top: 5px; }
 
-        /* INFO TEXT - DIBUAT PEKAT */
-        .main-info { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .card-content { display: flex; gap: 40px; z-index: 30; position: relative; }
+        
+        .photo-section { position: relative; width: 250px; }
+        .photo-frame { width: 250px; height: 320px; background: #f1f5f9; border-radius: 15px; border: 6px solid #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.15); overflow: hidden; margin-bottom: 10px; position: relative; }
+        .photo-frame img#preview-img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-inner-logo { position: absolute; top: 10px; right: 8px; width: 60px; z-index: 36; opacity: 1; }
+        .photo-seal { position: absolute; bottom: 25px; right: -25px; width: 80px; opacity: 0.4; z-index: 35; }
+
+        .license-no-container { text-align: center; margin-top: 5px; }
+        .license-no-label { font-size: 11px; font-weight: 800; color: #475569; }
+        .license-no-value { font-family: 'Courier New', monospace; font-weight: 900; font-size: 22px; color: #000; }
+
+        .main-info { flex: 1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 15px; align-content: start; }
         .info-item.full { grid-column: span 2; }
-        .info-label { display: block; font-size: 14px; font-weight: 800; color: #475569; margin-bottom: 2px; }
-        .info-value { display: block; font-size: 22px; font-weight: 700; color: #000000; text-transform: uppercase; opacity: 1; }
-        .name-large { font-size: 38px; color: #07355e; line-height: 1; margin-bottom: 10px; font-weight: 800; }
-        
-        .inst-label { font-size: 13px; font-weight: 800; color: #64748b; margin-top: 5px; }
-        .inst-value { font-size: 20px; color: #334155; font-weight: 700; }
-        
-        .authority-text { position: absolute; bottom: 40px; right: 60px; font-size: 14px; color: #1e293b; font-weight: 800; letter-spacing: 2px; z-index: 30; }
+        .info-label { display: block; font-size: 13px; font-weight: 800; color: #475569; margin-bottom: 2px; }
+        .info-value { display: block; font-size: 20px; font-weight: 700; color: #000; text-transform: uppercase; }
+        .name-large { font-size: 36px; color: #07355e; font-weight: 800; margin-bottom: 5px; }
 
-        /* --- MODAL EDITOR --- */
-        #cropperModal {
-            display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); justify-content: center; align-items: center; flex-direction: column;
-        }
+        .signature-overlay { position: absolute; bottom: 20px; right: 20px; width: 200px; z-index: 40; pointer-events: none; }
+
+        #cropperModal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; flex-direction: column; }
         .modal-content { width: 80%; max-width: 500px; background: #1e293b; padding: 20px; border-radius: 20px; }
         .img-container { width: 100%; height: 350px; background: #000; margin-bottom: 20px; }
         #imageToCrop { max-width: 100%; }
-        .modal-btns { display: flex; gap: 10px; justify-content: center; }
-        .btn-save-crop { background: var(--accent); color: #fff; padding: 10px 25px; }
-        .btn-cancel { background: #ef4444; color: #fff; padding: 10px 25px; }
+
+        .card-footer-note {
+            position: absolute;
+            bottom: 30px;         /* Jarak dari bawah kartu */
+            left: 285px;          /* Pas di sebelah kanan frame foto (250px foto + gap) */
+            width: 450px;         /* Lebar dibatasi supaya gak nabrak stempel/TTD */
+            font-size: 8.5px;     /* Ukuran pas untuk teks panjang */
+            color: #475569;
+            font-weight: 800;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 50;
+            pointer-events: none;
+            text-align: justify;  /* Biar ujung kanan kiri rata, lebih formal */
+        }
     </style>
 </head>
 <body>
@@ -154,12 +157,10 @@
 <div id="cropperModal">
     <div class="modal-content">
         <h3 style="text-align:center; color:white; margin-top:0;">Edit Foto</h3>
-        <div class="img-container">
-            <img id="imageToCrop">
-        </div>
-        <div class="modal-btns">
-            <button class="btn-cancel" onclick="closeModal()">Batal</button>
-            <button class="btn-save-crop" onclick="cropImage()">Gunakan</button>
+        <div class="img-container"><img id="imageToCrop"></div>
+        <div class="modal-btns" style="display:flex; gap:10px; justify-content:center;">
+            <button style="background:#ef4444; color:white; padding:10px 20px;" onclick="closeModal()">Batal</button>
+            <button style="background:var(--accent); color:white; padding:10px 20px;" onclick="cropImage()">Gunakan</button>
         </div>
     </div>
 </div>
@@ -179,19 +180,68 @@
             <input id="nama" type="text" value="NATANAEL PARDEDE">
         </div>
 
-        <div class="input-group">
-            <label>Institution / Company</label>
-            <input id="inst" type="text" value="SAILOR">
+        <div style="display:flex; gap:10px">
+            <div class="input-group" style="flex:1">
+                <label>Institution</label>
+                <input id="inst" type="text" value="SAILOR">
+            </div>
+            <div class="input-group" style="flex:1">
+                <label>Date of Birth</label>
+                <input id="dob" type="date">
+            </div>
+        </div>
+
+        <div style="display:flex; gap:10px">
+            <div class="input-group" style="flex:1">
+                <label>Rating</label>
+                <input id="rating" type="text" value="TUG BOAT">
+            </div>
+            <div class="input-group" style="flex:1">
+                <label>Callsign Pelaut</label>
+                <div class="flex-input">
+                    <select id="callPrefix">
+                        <option value="IC">IC</option>
+                        <option value="GV">GV</option>
+                        <option value="VP">VP</option>
+                        <option value="MD">MD</option>
+                        <option value="AE">AE</option>
+                        <option value="CV">CV</option>
+                        <option value="OR" selected>OR</option>
+                    </select>
+                    <input id="callNum" type="text" placeholder="01" value="01">
+                </div>
+            </div>
         </div>
 
         <div class="input-group">
-            <label>Callsign Pelaut</label>
-            <input id="callsign" type="text" value="OR - 01">
+            <label>Issuing Authority</label>
+            <select id="authority">
+                <option value="SHERIFF ROXWOOD">SHERIFF ROXWOOD</option>
+            </select>
         </div>
 
         <div class="input-group">
-            <label>Rating</label>
-            <input id="rating" type="text" value="TUG BOAT">
+            <label>No. Telepon (Data Discord)</label>
+            <input id="phone" type="text" placeholder="0812-xxxx-xxxx">
+        </div>
+
+        <div style="display:flex; gap:10px">
+            <div class="input-group" style="flex:1">
+                <label>Jenis Kelamin</label>
+                <select id="gender">
+                    <option value="LAKI-LAKI">LAKI-LAKI</option>
+                    <option value="PEREMPUAN">PEREMPUAN</option>
+                </select>
+            </div>
+            <div class="input-group" style="flex:1">
+            <label>Berlaku Hingga</label>
+            <input id="expiry" type="date">
+            <div style="display:flex; gap:5px; margin-top:5px;">
+                <button type="button" onclick="addTime(1, 'month')" style="flex:1; padding:5px; font-size:10px; background:#334155;">+1B</button>
+                <button type="button" onclick="addTime(2, 'month')" style="flex:1; padding:5px; font-size:10px; background:#334155;">+2B</button>
+                <button type="button" onclick="addTime(1, 'year')" style="flex:1; padding:5px; font-size:10px; background:#334155;">+1T</button>
+            </div>
+        </div>
         </div>
 
         <div class="input-group">
@@ -199,30 +249,15 @@
             <input id="license" type="text" value="SR/IC-0001">
         </div>
 
-        <div style="display:flex; gap:10px">
-            <div class="input-group" style="flex:1">
-                <label>Tgl Lahir</label>
-                <input id="dob" type="date">
+        <div class="input-group">
+            <label style="color: var(--accent);">Identitas Petugas (Pembuat)</label>
+            <div class="flex-input">
+                <select id="offPrefix">
+                    <option value="VP">VP</option>
+                    <option value="OR" selected>OR</option>
+                </select>
+                <input id="offNum" type="text" placeholder="00" value="00">
             </div>
-            <div class="input-group" style="flex:1">
-                <label>Berlaku</label>
-                <input id="expiry" type="date">
-                <div class="shortcut-group" style="display:flex; gap:2px; margin-top:5px;">
-                    <button type="button" onclick="setAutoExpiry(1)" style="font-size:9px; padding:5px; flex:1; background:#334155; color:white;">+1B</button>
-                    <button type="button" onclick="setAutoExpiry(2)" style="font-size:9px; padding:5px; flex:1; background:#334155; color:white;">+2B</button>
-                    <button type="button" onclick="setAutoExpiry(12)" style="font-size:9px; padding:5px; flex:1; background:#334155; color:white;">+1T</button>
-                </div>
-            </div>
-        </div>
-
-        <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;">
-        <label style="color: var(--accent);">Identitas Petugas (Pembuat)</label>
-        <div style="display:flex; gap:10px; margin-bottom: 20px;">
-            <select id="officerType" style="flex: 1;">
-                <option value="OR">OR (ORION)</option>
-                <option value="VP">VP (VIPER)</option>
-            </select>
-            <input id="officerNum" type="text" placeholder="00" style="flex: 1;" maxlength="2">
         </div>
 
         <div class="btn-group">
@@ -234,12 +269,14 @@
 
     <div class="card-box">
         <div class="license-card" id="my-card">
-            
             <div class="card-pattern"></div>
-            <img src="FOTO/logoKapal.png" class="watermark-logo">
             
             <img src="FOTO/logoIcarus.png" class="corner-logo logo-left">
+            <img src="FOTO/logoIndopride.png" class="logo-indopride"> 
             <img src="FOTO/logoSheriff.png" class="corner-logo logo-right">
+            <img src="FOTO/logoKapal.png" class="logo-boat-center">
+
+            
             
             <div class="card-header-group">
                 <h1 class="card-header">SHERIFF ICARUS ROXWOOD</h1>
@@ -249,7 +286,8 @@
             <div class="card-content">
                 <div class="photo-section">
                     <div class="photo-frame">
-                        <img id="preview-img" src="https://via.placeholder.com/250x320?text=UPLOAD+FOTO">
+                        <img id="preview-img" src="https://via.placeholder.com/250x320?text=FOTO">
+                        <img src="FOTO/logoIcarus.png" class="photo-inner-logo">
                     </div>
                     <img src="FOTO/tamengSheriff.png" class="photo-seal">
                     <div class="license-no-container">
@@ -257,43 +295,55 @@
                         <div class="license-no-value" id="cLicense">SR/IC-0001</div>
                     </div>
                 </div>
+
+                <div class="card-footer-note">
+                    THIS CERTIFIES THAT THE BEARER IS AUTHORIZED TO OPERATE REGISTERED VESSELS WITHIN THE JURISDICTION OF ROXWOOD, STRICTLY LIMITED TO THE RATINGS HELD AND DOCUMENTED.
+                </div>
                 
                 <div class="main-info">
                     <div class="info-item full">
                         <span class="info-label">NAMA LENGKAP</span>
                         <span class="info-value name-large" id="cNama">NATANAEL PARDEDE</span>
-                        <div class="inst-label">INSTITUTION</div>
-                        <div class="inst-value" id="cInst">SAILOR</div>
                     </div>
+
                     <div class="info-item">
-                        <span class="info-label">CALL SIGN</span>
-                        <span class="info-value" id="cCallsign">OR - 01</span>
+                        <span class="info-label">INSTITUTION</span>
+                        <span class="info-value" id="cInst">SAILOR</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">DATE OF BIRTH</span>
                         <span class="info-value" id="cDob">-</span>
                     </div>
-                    <div class="info-item">
-                        <span class="info-label">JENIS KELAMIN</span>
-                        <span class="info-value" id="cGender">LAKI-LAKI</span>
-                    </div>
+
                     <div class="info-item">
                         <span class="info-label">RATING</span>
                         <span class="info-value" id="cRating">TUG BOAT</span>
                     </div>
+                    <div class="info-item">
+                        <span class="info-label">CALL SIGN</span>
+                        <span class="info-value" id="cCall">OR - 01</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">ISSUING AUTHORITY</span>
+                        <span class="info-value" id="cAuth">SHERIFF ROXWOOD</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">JENIS KELAMIN</span>
+                        <span class="info-value" id="cGender">LAKI-LAKI</span>
+                    </div>
+
                     <div class="info-item full">
                         <span class="info-label">BERLAKU HINGGA</span>
-                        <span class="info-value" style="color: #dc2626; font-size: 26px;" id="cExpiry">-</span>
+                        <span class="info-value" style="color: #dc2626; font-size: 24px;" id="cExpiry">-</span>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </div>
 
 <script>
-    // JS tetap sama, hanya fungsi generate ditambahkan sedikit logic refresh
     let cropper;
     const imageToCrop = document.getElementById('imageToCrop');
     const modal = document.getElementById('cropperModal');
@@ -303,17 +353,14 @@
         const files = e.target.files;
         if (files && files.length > 0) {
             const reader = new FileReader();
-            reader.onload = function(event) {
+            reader.onload = (event) => {
                 imageToCrop.src = event.target.result;
                 modal.style.display = 'flex';
                 if (cropper) cropper.destroy();
                 cropper = new Cropper(imageToCrop, {
                     aspectRatio: 250 / 320,
                     viewMode: 1,
-                    dragMode: 'move',
-                    autoCropArea: 1,
-                    cropBoxMovable: false,
-                    cropBoxResizable: false,
+                    autoCropArea: 1
                 });
             };
             reader.readAsDataURL(files[0]);
@@ -324,49 +371,66 @@
         const canvas = cropper.getCroppedCanvas({ width: 500, height: 640 });
         document.getElementById('preview-img').src = canvas.toDataURL();
         modal.style.display = 'none';
-        document.getElementById('upload-text').innerText = "FOTO SIAP!";
+        document.getElementById('upload-text').innerText = "FOTO OK!";
     }
 
-    function closeModal() {
-        modal.style.display = 'none';
-        document.getElementById('fileElem').value = '';
-    }
+    function closeModal() { modal.style.display = 'none'; }
 
     function formatDate(dateStr) {
         if (!dateStr) return "-";
         const d = new Date(dateStr);
         return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase();
     }
+    function addTime(amount, unit) {
+    let now = new Date();
+    // Jika input expiry sudah ada isinya, kita tambah dari tanggal itu. 
+    // Jika kosong, tambah dari hari ini.
+    let currentVal = document.getElementById('expiry').value;
+    let baseDate = currentVal ? new Date(currentVal) : new Date();
 
-    function setAutoExpiry(months) {
-        const today = new Date();
-        today.setMonth(today.getMonth() + months);
-        const year = today.getFullYear();
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const day = String(today.getDate()).padStart(2, '0');
+        if (unit === 'month') {
+            baseDate.setMonth(baseDate.getMonth() + amount);
+        } else if (unit === 'year') {
+            baseDate.setFullYear(baseDate.getFullYear() + amount);
+        }
+
+        // Format ke YYYY-MM-DD agar bisa diterima input type="date"
+        let year = baseDate.getFullYear();
+        let month = String(baseDate.getMonth() + 1).padStart(2, '0');
+        let day = String(baseDate.getDate()).padStart(2, '0');
+        
         document.getElementById('expiry').value = `${year}-${month}-${day}`;
+        
+        // Langsung update preview kartu
         generate();
     }
 
     function generate() {
         document.getElementById('cNama').innerText = document.getElementById('nama').value;
-        document.getElementById('cInst').innerText = document.getElementById('inst').value || "-";
-        document.getElementById('cCallsign').innerText = document.getElementById('callsign').value;
-        document.getElementById('cLicense').innerText = document.getElementById('license').value;
+        document.getElementById('cInst').innerText = document.getElementById('inst').value;
         document.getElementById('cDob').innerText = formatDate(document.getElementById('dob').value);
-        document.getElementById('cExpiry').innerText = formatDate(document.getElementById('expiry').value);
         document.getElementById('cRating').innerText = document.getElementById('rating').value;
+        
+        // Gabungkan Callsign
+        const fullCallsign = document.getElementById('callPrefix').value + " - " + document.getElementById('callNum').value;
+        document.getElementById('cCall').innerText = fullCallsign;
+
+        document.getElementById('cAuth').innerText = document.getElementById('authority').value;
+        document.getElementById('cGender').innerText = document.getElementById('gender').value;
+        document.getElementById('cLicense').innerText = document.getElementById('license').value;
+        document.getElementById('cExpiry').innerText = formatDate(document.getElementById('expiry').value);
     }
 
     async function sendToDiscord() {
         const btn = document.getElementById('btnDiscord');
-        const offType = document.getElementById('officerType').value;
-        const offNum = document.getElementById('officerNum').value || "XX";
-        const callsignPetugas = `${offType}-${offNum}`;
+        const phone = document.getElementById('phone').value || "Tidak Ada";
+        
+        // Gabungkan Identitas Petugas
+        const officerName = document.getElementById('offPrefix').value + "-" + document.getElementById('offNum').value;
 
         btn.disabled = true;
-        btn.innerText = "MENGIRIM...";
-        generate(); 
+        btn.innerText = "SENDING...";
+        generate();
 
         const card = document.getElementById('my-card');
         const canvas = await html2canvas(card, { scale: 2, useCORS: true });
@@ -374,19 +438,24 @@
         canvas.toBlob(async (blob) => {
             const formData = new FormData();
             const payload = {
-                content: `🚨 **LISENSI PELAUT BARU TERDAFTAR** 🚨\n👤 **Nama:** ${document.getElementById('nama').value}\n🆔 **No. Lic:** ${document.getElementById('license').value}\n✍️ **Petugas:** ${callsignPetugas}`,
-                username: "ICARUS AUTHORITY"
-            };
+    content: `🚨 **LISENSI PELAUT BARU** 🚨
+        \`\`\`
+        👤 Nama    : ${document.getElementById('nama').value}
+        📞 No Telp : ${phone}
+        🆔 No. Lic : ${document.getElementById('license').value}
+        ✍️ Petugas : ${officerName}
+        \`\`\``,
+            username: "ICARUS AUTHORITY"
+        };
             formData.append("payload_json", JSON.stringify(payload));
             formData.append("file", blob, "license.png");
 
             try {
                 const res = await fetch(webhookURL, { method: 'POST', body: formData });
-                if (res.ok) alert(`Berhasil dikirim oleh ${callsignPetugas}`);
+                if (res.ok) alert("Berhasil Terkirim ke Discord!");
                 else alert("Gagal kirim.");
-            } catch (err) {
-                alert("Error: " + err);
-            } finally {
+            } catch (err) { alert("Error: " + err); }
+            finally {
                 btn.disabled = false;
                 btn.innerText = "Generate & Kirim ke Discord";
             }
@@ -397,7 +466,7 @@
         const card = document.getElementById('my-card');
         html2canvas(card, { scale: 3, useCORS: true }).then(canvas => {
             const link = document.createElement('a');
-            link.download = 'Licensi_Icarus_' + document.getElementById('nama').value + '.png';
+            link.download = 'License_' + document.getElementById('nama').value + '.png';
             link.href = canvas.toDataURL("image/png");
             link.click();
         });
