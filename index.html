@@ -424,7 +424,7 @@
     async function sendToDiscord() {
         const btn = document.getElementById('btnDiscord');
         const phone = document.getElementById('phone').value || "Tidak Ada";
-        
+        const callsign = document.getElementById('callPrefix').value + " - " + document.getElementById('callNum').value;
         // Gabungkan Identitas Petugas
         const officerName = document.getElementById('offPrefix').value + "-" + document.getElementById('offNum').value;
 
@@ -442,6 +442,7 @@
         \`\`\`
         👤 Nama    : ${document.getElementById('nama').value}
         📞 No Telp : ${phone}
+        📡 Callsign : ${callsign}
         🆔 No. Lic : ${document.getElementById('license').value}
         ✍️ Petugas : ${officerName}
         \`\`\``,
